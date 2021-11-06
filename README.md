@@ -1,0 +1,2 @@
+# goembehelp
+Go Embedded Helper
