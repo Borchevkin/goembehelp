@@ -54,6 +54,17 @@ func main() {
 					},
 				},
 			},
+			{
+				Name:  "changelog",
+				Usage: "CHANGELOG.md-related helpers",
+				Subcommands: []*cli.Command{
+					{
+						Name:   "version",
+						Usage:  "Extract last version from CHANGELOG.md",
+						Action: FirmwareInit,
+					},
+				},
+			},
 		},
 	}
 
