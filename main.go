@@ -19,7 +19,7 @@ func main() {
 				Email: "danil.borchevkin@gmail.com",
 			},
 		},
-		Copyright: "MIT-2 Licence",
+		Copyright: "MIT-2 License",
 		HelpName:  "goembehelp",
 		Usage:     "Helper tools for embedded developer",
 		UsageText: "type <goembehelp> and check available options",
@@ -29,14 +29,13 @@ func main() {
 		HideVersion: false,
 
 		CommandNotFound: func(c *cli.Context, command string) {
-			fmt.Fprintf(c.App.Writer, "Thar be no %q here.\n", command)
+			fmt.Fprintf(c.App.Writer, "Command <%q> not found.\n", command)
 		},
 
 		OnUsageError: func(c *cli.Context, err error, isSubcommand bool) error {
 			if isSubcommand {
 				return err
 			}
-
 			fmt.Fprintf(c.App.Writer, "WRONG: %#v\n", err)
 			return nil
 		},
@@ -59,9 +58,20 @@ func main() {
 				Usage: "CHANGELOG.md-related helpers",
 				Subcommands: []*cli.Command{
 					{
-						Name:   "version",
+						Name:   "lastversion",
 						Usage:  "Extract last version from CHANGELOG.md",
-						Action: FirmwareInit,
+						Action: ChangelogExtractVersion,
+					},
+				},
+			},
+			{
+				Name:  "cred",
+				Usage: "Credentials-realated helpers",
+				Subcommands: []*cli.Command{
+					{
+						Name:   "cstring",
+						Usage:  "Extract a credential from file and print it as C-string",
+						Action: CredGetCstring,
 					},
 				},
 			},

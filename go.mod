@@ -1,4 +1,4 @@
-module hiqo_scaffold
+module goembehelp
 
 go 1.14
 

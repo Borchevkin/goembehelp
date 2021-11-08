@@ -16,7 +16,7 @@ import (
 // - create CHANGELOG.md
 // - create doxygen docs
 func FirmwareInit(c *cli.Context) error {
-	fmt.Println("Scaffold project's dirs according to the HiQo IoT Embedded Project Structure v1.5")
+	fmt.Println("Scaffold project's dirs")
 
 	var err error = nil
 	var dirPath string = ""
