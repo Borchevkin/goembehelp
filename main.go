@@ -66,12 +66,23 @@ func main() {
 			},
 			{
 				Name:  "cred",
-				Usage: "Credentials-realated helpers",
+				Usage: "Credentials-related helpers",
 				Subcommands: []*cli.Command{
 					{
 						Name:   "cstring",
-						Usage:  "Extract a credential from file and print it as C-string",
+						Usage:  "Extract a credential from file and print it as C-string \n",
 						Action: CredGetCstring,
+					},
+				},
+			},
+			{
+				Name:  "batch",
+				Usage: "Batch files-related helpers",
+				Subcommands: []*cli.Command{
+					{
+						Name:   "suffix",
+						Usage:  "Add suffix for all files",
+						Action: BatchSuffix,
 					},
 				},
 			},

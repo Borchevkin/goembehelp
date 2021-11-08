@@ -15,6 +15,4 @@
 # vendor/
 
 .vscode/
-.vscode/settings.json
-.vscode/launch.json
 samples/
