@@ -1,3 +1,15 @@
+## [0.0.4] - 2021-11-25
+
+**Fixed**:
+- go.mod for build in Linux
+- CHANGELOG.md
+
+## [0.0.3] - 2021-11-25
+
+**Fixed**:
+- Version
+- README.md
+
 ## [0.0.2] - 2021-11-08
 
 **Added:**
