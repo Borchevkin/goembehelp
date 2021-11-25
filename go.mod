@@ -1,4 +1,4 @@
-module goembehelp
+module github.com/Borchevkin/goembehelp
 
 go 1.14
 
