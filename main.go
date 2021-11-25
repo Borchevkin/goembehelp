@@ -11,7 +11,7 @@ import (
 func main() {
 	app := &cli.App{
 		Name:     "goembehelp",
-		Version:  "v0.0.1",
+		Version:  "v0.0.3",
 		Compiled: time.Now(),
 		Authors: []*cli.Author{
 			&cli.Author{
