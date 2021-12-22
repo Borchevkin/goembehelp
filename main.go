@@ -11,7 +11,7 @@ import (
 func main() {
 	app := &cli.App{
 		Name:     "goembehelp",
-		Version:  "v0.0.4",
+		Version:  "v0.0.5",
 		Compiled: time.Now(),
 		Authors: []*cli.Author{
 			&cli.Author{
@@ -42,14 +42,14 @@ func main() {
 
 		Commands: []*cli.Command{
 			{
-				Name:    "firmware",
-				Aliases: []string{"fw"},
-				Usage:   "Firmware-related helpers",
+				Name:  "firmware",
+				Usage: "Firmware-related helpers",
 				Subcommands: []*cli.Command{
 					{
-						Name:   "init",
-						Usage:  "Init folder structure for a firmware project",
-						Action: FirmwareInit,
+						Name:      "init",
+						Usage:     "Init folder structure for a firmware project",
+						UsageText: "goembehelp firmware [PATH_TO_FOLDER]",
+						Action:    FirmwareInit,
 					},
 				},
 			},
@@ -58,9 +58,10 @@ func main() {
 				Usage: "CHANGELOG.md-related helpers",
 				Subcommands: []*cli.Command{
 					{
-						Name:   "lastversion",
-						Usage:  "Extract last version from CHANGELOG.md",
-						Action: ChangelogExtractVersion,
+						Name:      "lastversion",
+						Usage:     "Extract last version from CHANGELOG.md",
+						UsageText: "goembehelp changelog lastversion [PATH_TO_FILE]",
+						Action:    ChangelogExtractVersion,
 					},
 				},
 			},
@@ -69,9 +70,10 @@ func main() {
 				Usage: "Credentials-related helpers",
 				Subcommands: []*cli.Command{
 					{
-						Name:   "cstring",
-						Usage:  "Extract a credential from file and print it as C-string \n",
-						Action: CredGetCstring,
+						Name:      "cstring",
+						Usage:     "Extract a credential from file and print it as C-string \n",
+						UsageText: "goembehelp cred cstring [PATH_TO_FILE]",
+						Action:    CredGetCstring,
 					},
 				},
 			},
@@ -80,9 +82,10 @@ func main() {
 				Usage: "Batch files-related helpers",
 				Subcommands: []*cli.Command{
 					{
-						Name:   "suffix",
-						Usage:  "Add suffix for all files",
-						Action: BatchSuffix,
+						Name:      "suffix",
+						Usage:     "Add suffix for files with predefined extension",
+						UsageText: "goembehelp batch suffix [PATH_TO_FOLDER] [SUFFIX] .[FILE_EXTENSION]",
+						Action:    BatchSuffix,
 					},
 				},
 			},
