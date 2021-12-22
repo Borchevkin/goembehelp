@@ -40,7 +40,6 @@ func BatchSuffix(c *cli.Context) error {
 
 	for _, f := range files {
 		if filepath.Ext(f.Name()) == extension {
-			fmt.Println("Found with extension")
 			oldName := f.Name()[:len(f.Name())-len(extension)] + extension
 			newName := f.Name()[:len(f.Name())-len(extension)] + suffix + extension
 			fmt.Println("Rename: " + oldName + " -> " + newName)
